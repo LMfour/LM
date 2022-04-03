@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/driving"
+    tools:context=".LoginActivity">
+
+    <EditText
+        android:id="@+id/input_id"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/logininput_background"
+        android:ems="10"
+        android:hint="아이디"
+        android:inputType="textPersonName"
+        android:padding="11dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/app_title"
+        app:layout_constraintStart_toStartOf="@+id/app_title"
+        app:layout_constraintTop_toBottomOf="@+id/app_title" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="280dp"
+        android:layout_height="42dp"
+        android:padding="11dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/logininput_background"
+        android:ems="10"
+        android:hint="비밀번호"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/input_id"
+        app:layout_constraintStart_toStartOf="@+id/input_id"
+        app:layout_constraintTop_toBottomOf="@+id/input_id" />
+
+    <android.widget.Button
+        android:id="@+id/btn_login"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/loginbtn_background"
+        android:text="로그인"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/input_password"
+        app:layout_constraintStart_toStartOf="@+id/input_password"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
+    <android.widget.Button
+        android:id="@+id/btn_kakao_login"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="8dp"
+        android:background="#FAE100"
+        android:text="카카오 계정으로 로그인"
+        android:textColor="#2E181A"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <android.widget.Button
+        android:id="@+id/btn_facebook_login"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="#3B5999"
+        android:text="페이스북 계정으로 로그인"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_kakao_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_kakao_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kakao_login" />
+
+    <android.widget.Button
+        android:id="@+id/btn_naver_login"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:background="#1DC800"
+        android:text="네이버 계정으로 로그인"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_facebook_login"
+        app:layout_constraintStart_toStartOf="@+id/btn_facebook_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_facebook_login" />
+
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
+        android:text="졸면않되!"
+        android:textColor="#DB8213"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_naver_login">
+
+        <TextView
+            android:id="@+id/btn_nonmember_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="right"
+            android:text="비회원 로그인"
+            android:textColor="@color/white"></TextView>
+
+        <TextView
+            android:id="@+id/btn_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=" / "
+            android:textColor="@color/white"></TextView>
+
+        <TextView
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:gravity="left"
+            android:text="회원가입"
+            android:textColor="@color/white"></TextView>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
