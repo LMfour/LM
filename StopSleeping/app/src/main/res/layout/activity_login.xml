@@ -8,7 +8,7 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/input_id"
+        android:id="@+id/lg_id_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -20,12 +20,12 @@
         android:inputType="textPersonName"
         android:padding="11dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/app_title"
-        app:layout_constraintStart_toStartOf="@+id/app_title"
-        app:layout_constraintTop_toBottomOf="@+id/app_title" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_title_text"
+        app:layout_constraintStart_toStartOf="@+id/lg_title_text"
+        app:layout_constraintTop_toBottomOf="@+id/lg_title_text" />
 
     <EditText
-        android:id="@+id/input_password"
+        android:id="@+id/lg_pw_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:padding="11dp"
@@ -37,12 +37,12 @@
         android:hint="비밀번호"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/input_id"
-        app:layout_constraintStart_toStartOf="@+id/input_id"
-        app:layout_constraintTop_toBottomOf="@+id/input_id" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_id_input"
+        app:layout_constraintStart_toStartOf="@+id/lg_id_input"
+        app:layout_constraintTop_toBottomOf="@+id/lg_id_input" />
 
     <android.widget.Button
-        android:id="@+id/btn_login"
+        android:id="@+id/lg_login_btn"
         android:layout_width="280dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
@@ -53,12 +53,12 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/input_password"
-        app:layout_constraintStart_toStartOf="@+id/input_password"
-        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_pw_input"
+        app:layout_constraintStart_toStartOf="@+id/lg_pw_input"
+        app:layout_constraintTop_toBottomOf="@+id/lg_pw_input" />
 
     <android.widget.Button
-        android:id="@+id/btn_kakao_login"
+        android:id="@+id/lg_kakao_btn"
         android:layout_width="320dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -69,12 +69,12 @@
         android:textColor="#2E181A"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btn_login"
-        app:layout_constraintStart_toStartOf="@+id/btn_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_login_btn"
+        app:layout_constraintStart_toStartOf="@+id/lg_login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/lg_login_btn" />
 
     <android.widget.Button
-        android:id="@+id/btn_facebook_login"
+        android:id="@+id/lg_facebook_btn"
         android:layout_width="320dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -85,12 +85,12 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btn_kakao_login"
-        app:layout_constraintStart_toStartOf="@+id/btn_kakao_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_kakao_login" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_kakao_btn"
+        app:layout_constraintStart_toStartOf="@+id/lg_kakao_btn"
+        app:layout_constraintTop_toBottomOf="@+id/lg_kakao_btn" />
 
     <android.widget.Button
-        android:id="@+id/btn_naver_login"
+        android:id="@+id/lg_naver_btn"
         android:layout_width="320dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -101,12 +101,12 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/btn_facebook_login"
-        app:layout_constraintStart_toStartOf="@+id/btn_facebook_login"
-        app:layout_constraintTop_toBottomOf="@+id/btn_facebook_login" />
+        app:layout_constraintEnd_toEndOf="@+id/lg_facebook_btn"
+        app:layout_constraintStart_toStartOf="@+id/lg_facebook_btn"
+        app:layout_constraintTop_toBottomOf="@+id/lg_facebook_btn" />
 
     <TextView
-        android:id="@+id/app_title"
+        android:id="@+id/lg_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -127,10 +127,10 @@
         android:weightSum="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_naver_login">
+        app:layout_constraintTop_toBottomOf="@+id/lg_naver_btn">
 
         <TextView
-            android:id="@+id/btn_nonmember_login"
+            android:id="@+id/lg_nonlg_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -139,7 +139,7 @@
             android:textColor="@color/white"></TextView>
 
         <TextView
-            android:id="@+id/btn_none"
+            android:id="@+id/lg_none"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -147,7 +147,7 @@
             android:textColor="@color/white"></TextView>
 
         <TextView
-            android:id="@+id/btn_register"
+            android:id="@+id/lg_register_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"

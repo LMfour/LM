@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
@@ -16,7 +15,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        btn_register = findViewById(R.id.btn_register);
+        btn_register = findViewById(R.id.lg_register_btn);
 
         // 회원가입 버튼 클릭시 회원가입 페이지로 이동
         btn_register.setOnClickListener(new View.OnClickListener() {

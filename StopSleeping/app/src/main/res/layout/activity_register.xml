@@ -8,7 +8,7 @@
     tools:context=".RegisterActivity">
 
     <EditText
-        android:id="@+id/register_name"
+        android:id="@+id/reg_name_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/register_nickname"
+        android:id="@+id/reg_nickname_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -37,12 +37,12 @@
         android:inputType="textPersonName"
         android:padding="11dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/register_name"
-        app:layout_constraintStart_toStartOf="@+id/register_name"
-        app:layout_constraintTop_toBottomOf="@+id/register_name" />
+        app:layout_constraintEnd_toEndOf="@+id/reg_name_input"
+        app:layout_constraintStart_toStartOf="@+id/reg_name_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_name_input" />
 
     <EditText
-        android:id="@+id/register_id"
+        android:id="@+id/reg_id_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -54,12 +54,12 @@
         android:inputType="textPersonName"
         android:padding="11dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/register_nickname"
-        app:layout_constraintStart_toStartOf="@+id/register_nickname"
-        app:layout_constraintTop_toBottomOf="@+id/register_nickname" />
+        app:layout_constraintEnd_toEndOf="@+id/reg_nickname_input"
+        app:layout_constraintStart_toStartOf="@+id/reg_nickname_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_nickname_input" />
 
     <EditText
-        android:id="@+id/register_password"
+        android:id="@+id/reg_pw_input"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -71,12 +71,12 @@
         android:inputType="textPersonName"
         android:padding="11dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/register_id"
-        app:layout_constraintStart_toStartOf="@+id/register_id"
-        app:layout_constraintTop_toBottomOf="@+id/register_id" />
+        app:layout_constraintEnd_toEndOf="@+id/reg_id_input"
+        app:layout_constraintStart_toStartOf="@+id/reg_id_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_id_input" />
 
     <EditText
-        android:id="@+id/register_password_chk"
+        android:id="@+id/reg_pw_chk"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -88,12 +88,12 @@
         android:inputType="textPersonName"
         android:padding="11dp"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/register_id"
-        app:layout_constraintStart_toStartOf="@+id/register_id"
-        app:layout_constraintTop_toBottomOf="@+id/register_password" />
+        app:layout_constraintEnd_toEndOf="@+id/reg_id_input"
+        app:layout_constraintStart_toStartOf="@+id/reg_id_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pw_input" />
 
     <android.widget.Button
-        android:id="@+id/register_btn"
+        android:id="@+id/reg_submit_btn"
         android:layout_width="280dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
@@ -104,10 +104,10 @@
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/register_password"
+        app:layout_constraintEnd_toEndOf="@+id/reg_pw_input"
         app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toStartOf="@+id/register_password"
-        app:layout_constraintTop_toBottomOf="@+id/register_password_chk" />
+        app:layout_constraintStart_toStartOf="@+id/reg_pw_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pw_chk" />
 
     <CheckBox
         android:id="@+id/register_nick_chk"
@@ -116,8 +116,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="12dp"
         android:text="중복확인"
-        app:layout_constraintEnd_toEndOf="@+id/register_nickname"
-        app:layout_constraintTop_toBottomOf="@+id/register_name" />
+        app:layout_constraintEnd_toEndOf="@+id/reg_nickname_input"
+        app:layout_constraintTop_toBottomOf="@+id/reg_name_input" />
 
     <CheckBox
         android:id="@+id/register_id_chk"
@@ -126,6 +126,6 @@
         android:layout_marginTop="10dp"
         android:text="중복확인"
         app:layout_constraintEnd_toEndOf="@+id/register_nick_chk"
-        app:layout_constraintTop_toBottomOf="@+id/register_nickname" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_nickname_input" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
