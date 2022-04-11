@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StopSleeping">
         <activity
+            android:name=".CheckActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
