@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StopSleeping">
         <activity
+            android:name=".ChangeCountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChangeAlarmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModifyInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckActivity"
             android:exported="false" />
         <activity

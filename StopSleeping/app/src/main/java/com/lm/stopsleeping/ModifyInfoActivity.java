@@ -7,14 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class CheckActivity extends AppCompatActivity {
+public class ModifyInfoActivity extends AppCompatActivity {
 
     ImageButton btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check);
+        setContentView(R.layout.activity_modify_info);
 
         btn_back = findViewById(R.id.men_back_btn);
 
@@ -22,7 +22,7 @@ public class CheckActivity extends AppCompatActivity {
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(CheckActivity.this, MenuActivity.class);
+                Intent intent =  new Intent(ModifyInfoActivity.this, MenuActivity.class);
                 startActivity(intent);
             }
         });

@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 public class MypageFragment extends Fragment {
 
     private View view;
-    private TextView btn_info;
+    private TextView btn_info, btn_chk;
 
     public MypageFragment() {
 
@@ -26,14 +26,24 @@ public class MypageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_mypage,container,false);
-        btn_info = view.findViewById(R.id.myp_chk_txt);
+        btn_chk = view.findViewById(R.id.myp_chk_txt);
+        btn_info = view.findViewById(R.id.myp_info_txt);
 
 
         // 마이페이지의 졸음운전 날짜 확인 클릭시 페이지 이동
-        btn_info.setOnClickListener(new View.OnClickListener() {
+        btn_chk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent =  new Intent(getActivity(), CheckActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 마이페이지의 개인정보 수정 클릭시 페이지 이동
+        btn_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ModifyInfoActivity.class);
                 startActivity(intent);
             }
         });

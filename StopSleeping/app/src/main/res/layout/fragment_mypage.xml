@@ -52,4 +52,20 @@
         app:layout_constraintEnd_toEndOf="@+id/myp_info_btn"
         app:layout_constraintTop_toTopOf="@+id/myp_info_btn" />
 
+    <TextView
+        android:id="@+id/menu_my_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="338dp"
+        android:text="마이페이지"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:shadowRadius="0.5"
+        android:shadowColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

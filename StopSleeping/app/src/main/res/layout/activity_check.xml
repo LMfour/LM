@@ -92,7 +92,7 @@
 
 
     <ImageButton
-        android:id="@+id/chk_back_btn"
+        android:id="@+id/men_back_btn"
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:layout_marginStart="12dp"
@@ -114,7 +114,7 @@
         android:scaleType='fitXY'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_round_img"
+        app:layout_constraintTop_toBottomOf="@+id/modinfo_round_img"
         app:srcCompat="@drawable/menu_round_btn" />
 
     <TextView
@@ -158,7 +158,7 @@
         app:srcCompat="@drawable/trashcan" />
 
     <ImageView
-        android:id="@+id/chk_round_img"
+        android:id="@+id/modinfo_round_img"
         android:layout_width="426dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
@@ -172,7 +172,7 @@
 
 
     <TextView
-        android:id="@+id/chk_title_txt"
+        android:id="@+id/chgcnt_title_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
