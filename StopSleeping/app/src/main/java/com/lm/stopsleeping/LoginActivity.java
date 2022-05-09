@@ -23,7 +23,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
 public class LoginActivity extends AppCompatActivity {
-    private View btn_register, btn_login;
+    private TextView btn_nlog;
     private View btn_kakao_login;
 
     @Override
@@ -32,9 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        btn_register = findViewById(R.id.lg_register_btn);
-        btn_login = findViewById(R.id.lg_login_btn);
         btn_kakao_login = findViewById(R.id.lg_kakao_btn);
+        btn_nlog = findViewById(R.id.lg_nonlg_btn);
 
         Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>(){
             @Override
@@ -61,18 +60,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // 회원가입 버튼 클릭시 회원가입 페이지로 이동
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =  new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 로그인 버튼 클릭시 테스트 페이지로 이동
-
-        btn_login.setOnClickListener(new View.OnClickListener() {
+        // 비회원 로그인 버튼 클릭시 테스트 페이지로 이동
+        btn_nlog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent =  new Intent(LoginActivity.this, TestActivity.class);

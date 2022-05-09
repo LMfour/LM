@@ -7,71 +7,20 @@
     android:background="@drawable/driving"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/lg_id_input"
-        android:layout_width="280dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/logininput_background"
-        android:ems="10"
-        android:hint="아이디"
-        android:inputType="textPersonName"
-        android:padding="11dp"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/lg_title_text"
-        app:layout_constraintStart_toStartOf="@+id/lg_title_text"
-        app:layout_constraintTop_toBottomOf="@+id/lg_title_text" />
-
-    <EditText
-        android:id="@+id/lg_pw_input"
-        android:layout_width="280dp"
-        android:layout_height="42dp"
-        android:padding="11dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/logininput_background"
-        android:ems="10"
-        android:hint="비밀번호"
-        android:inputType="textPersonName"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/lg_id_input"
-        app:layout_constraintStart_toStartOf="@+id/lg_id_input"
-        app:layout_constraintTop_toBottomOf="@+id/lg_id_input" />
-
-    <android.widget.Button
-        android:id="@+id/lg_login_btn"
-        android:layout_width="280dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/loginbtn_background"
-        android:text="로그인"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/lg_pw_input"
-        app:layout_constraintStart_toStartOf="@+id/lg_pw_input"
-        app:layout_constraintTop_toBottomOf="@+id/lg_pw_input" />
-
     <ImageButton
         android:id="@+id/lg_kakao_btn"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/kakao_login_btn"
-        app:layout_constraintEnd_toEndOf="@+id/lg_login_btn"
-        app:layout_constraintStart_toStartOf="@+id/lg_login_btn"
-        app:layout_constraintTop_toBottomOf="@+id/lg_login_btn" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lg_title_text" />
 
     <android.widget.Button
         android:id="@+id/lg_facebook_btn"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -79,7 +28,7 @@
         android:background="#3B5999"
         android:text="페이스북 계정으로 로그인"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/lg_kakao_btn"
         app:layout_constraintStart_toStartOf="@+id/lg_kakao_btn"
@@ -87,7 +36,7 @@
 
     <android.widget.Button
         android:id="@+id/lg_naver_btn"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
@@ -95,7 +44,7 @@
         android:background="#1DC800"
         android:text="네이버 계정으로 로그인"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="14dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/lg_facebook_btn"
         app:layout_constraintStart_toStartOf="@+id/lg_facebook_btn"
@@ -115,42 +64,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/lg_nonlg_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:orientation="horizontal"
-        android:weightSum="10"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:text="비회원 로그인"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lg_naver_btn">
-
-        <TextView
-            android:id="@+id/lg_nonlg_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:gravity="right"
-            android:text="비회원 로그인"
-            android:textColor="@color/white"></TextView>
-
-        <TextView
-            android:id="@+id/lg_none"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text=" / "
-            android:textColor="@color/white"></TextView>
-
-        <TextView
-            android:id="@+id/lg_register_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:gravity="left"
-            android:text="회원가입"
-            android:textColor="@color/white"></TextView>
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/lg_naver_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

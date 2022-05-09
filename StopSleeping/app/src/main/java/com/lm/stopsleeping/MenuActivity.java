@@ -47,14 +47,17 @@ public class MenuActivity extends AppCompatActivity {
         email = findViewById(R.id.menu_email_txt);
         profileImage = findViewById(R.id.menu_user_img);
 
+        Intent intent = getIntent();
+        int where = intent.getIntExtra("whr", 0);
+
         // 마이페이지 프래그먼트가 액티비티에 바로 보이기 위함
-        viewMypage();
+        viewMypage(where);
 
         // 마이페이지 클릭시 프레그먼트 변환
         my_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                viewMypage();
+                viewMypage(0);
             }
         });
 
@@ -62,11 +65,7 @@ public class MenuActivity extends AppCompatActivity {
         option_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                OptionFragment optFragment = new OptionFragment();
-                transaction.replace(R.id.frame, optFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                viewMypage(1);
             }
         });
 
@@ -101,11 +100,20 @@ public class MenuActivity extends AppCompatActivity {
     }
 
 
-    private void viewMypage() {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        MypageFragment myFragment = new MypageFragment();
-        transaction.replace(R.id.frame, myFragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+    private void viewMypage(int whr) {
+        if(whr == 0) {      // 마이페이지
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            MypageFragment myFragment = new MypageFragment();
+            transaction.replace(R.id.frame, myFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        } else if(whr == 1) {       // 설정
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            OptionFragment optFragment = new OptionFragment();
+            transaction.replace(R.id.frame, optFragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
+        }
     }
+
 }

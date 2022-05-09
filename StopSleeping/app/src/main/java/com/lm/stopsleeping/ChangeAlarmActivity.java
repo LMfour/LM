@@ -25,6 +25,7 @@ public class ChangeAlarmActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent =  new Intent(ChangeAlarmActivity.this, MenuActivity.class);
+                intent.putExtra("whr", 1);      //설정 프라그먼트로 가기 위함
                 startActivity(intent);
             }
         });

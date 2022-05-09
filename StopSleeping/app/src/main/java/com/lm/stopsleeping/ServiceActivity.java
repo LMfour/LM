@@ -106,6 +106,6 @@ public class ServiceActivity extends AppCompatActivity {
                 return null;
             }
         });
-
     }
+
 }

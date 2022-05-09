@@ -15,11 +15,12 @@
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1395" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/drawable/loginbtn_background.xml" value="0.1395" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/drawable/logininput_background.xml" value="0.254" />
+        <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/drawable/testbtn_background.xml" value="0.152" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_camera.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_change_alarm.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_change_count.xml" value="0.3026041666666667" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_check.xml" value="0.33" />
-        <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_logpage.xml" value="0.33" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_menu.xml" value="0.33" />
@@ -28,7 +29,7 @@
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_navi.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_register.xml" value="0.2796875" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_revicepage.xml" value="0.33" />
-        <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_service.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_service.xml" value="0.33" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/activity_test.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/fragment_check.xml" value="0.30416666666666664" />
         <entry key="..\:/Users/User/Desktop/LM/StopSleeping/app/src/main/res/layout/fragment_menu.xml" value="0.3203125" />
