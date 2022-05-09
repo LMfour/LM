@@ -38,7 +38,7 @@
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
         app:layout_constraintStart_toStartOf="parent"

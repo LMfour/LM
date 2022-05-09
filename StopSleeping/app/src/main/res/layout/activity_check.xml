@@ -8,10 +8,10 @@
 
     <ImageButton
         android:id="@+id/chk_back_img3"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="94dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
@@ -24,20 +24,20 @@
         android:id="@+id/chk_time_txt3"
         android:layout_width="124dp"
         android:layout_height="34dp"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
         android:text="오전 12:00:30"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chk_back_img3"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img3" />
 
     <ImageButton
         android:id="@+id/chk_back_img2"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="94dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
@@ -51,10 +51,10 @@
         android:layout_width="22dp"
         android:layout_height="31dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginRight="20dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chk_back_img2"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img2"
         app:srcCompat="@drawable/trashcan" />
 
@@ -62,12 +62,12 @@
         android:id="@+id/chk_time_txt2"
         android:layout_width="124dp"
         android:layout_height="34dp"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
         android:text="오전 11:55:30"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chk_back_img2"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img2" />
 
     <TextView
@@ -83,10 +83,10 @@
         android:layout_width="22dp"
         android:layout_height="31dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginRight="20dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chk_back_img3"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img3"
         app:srcCompat="@drawable/trashcan" />
 
@@ -96,7 +96,7 @@
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
         app:layout_constraintStart_toStartOf="parent"
@@ -105,10 +105,10 @@
 
     <ImageButton
         android:id="@+id/chk_back_img1"
-        android:layout_width="382dp"
+        android:layout_width="350dp"
         android:layout_height="94dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="22dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
@@ -137,12 +137,12 @@
         android:id="@+id/chk_time_txt1"
         android:layout_width="124dp"
         android:layout_height="34dp"
-        android:layout_marginStart="44dp"
         android:layout_marginTop="18dp"
+        android:layout_marginLeft="20dp"
         android:text="오후 02:42:39"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chk_back_img1"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img1" />
 
     <ImageButton
@@ -150,10 +150,10 @@
         android:layout_width="22dp"
         android:layout_height="31dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginRight="20dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/chk_back_img1"
         app:layout_constraintTop_toTopOf="@+id/chk_back_img1"
         app:srcCompat="@drawable/trashcan" />
 

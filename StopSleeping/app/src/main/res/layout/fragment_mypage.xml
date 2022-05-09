@@ -7,7 +7,7 @@
 
     <ImageButton
         android:id="@+id/myp_chk_btn"
-        android:layout_width="381dp"
+        android:layout_width="350dp"
         android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
@@ -29,7 +29,7 @@
 
     <ImageButton
         android:id="@+id/myp_info_btn"
-        android:layout_width="381dp"
+        android:layout_width="350dp"
         android:layout_height="63dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="380dp"

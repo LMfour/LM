@@ -21,31 +21,26 @@
         android:id="@+id/svc_menu_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="300dp"
-        android:layout_marginBottom="565dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="15dp"
         android:clickable="true"
         app:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_preferences"
         tools:ignore="MissingConstraints" />
 
     <android.widget.TextView
         android:id="@+id/svc_blank"
-        android:layout_width="291dp"
+        android:layout_width="266dp"
         android:layout_height="42dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="565dp"
         android:background="@drawable/testbtn_background"
-        android:text=""
         android:textColor="@color/black"
         android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -54,56 +49,48 @@
         android:id="@+id/svc_name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="565dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="8dp"
         android:textColor="@color/black"
         android:textSize="19dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/svc_blank"
+        app:layout_constraintTop_toTopOf="@+id/svc_blank"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/svc_email_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="565dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="3dp"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/svc_name_txt"
+        app:layout_constraintTop_toTopOf="@+id/svc_name_txt"
         tools:ignore="MissingConstraints" />
 
 
     <Switch
         android:id="@+id/svc_warn_switch"
-        android:layout_width="364dp"
+        android:layout_width="340dp"
         android:layout_height="39dp"
-        android:layout_marginBottom="380dp"
+        android:layout_marginTop="55dp"
         android:background="@drawable/testbtn_background"
         android:text="     누적 경고 횟수 : "
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svc_blank"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/svc_loc_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="25dp"
         android:clickable="true"
         app:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851"
+        app:layout_constraintBottom_toTopOf="@+id/svc_stop_btn"
+        app:layout_constraintEnd_toStartOf="@+id/svc_mus_btn"
         app:srcCompat="@android:drawable/ic_menu_mylocation"
         tools:ignore="MissingConstraints" />
 
@@ -111,14 +98,12 @@
         android:id="@+id/svc_mus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/white"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/svc_stop_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851"
         app:rippleColor="#F44336"
         app:srcCompat="@android:drawable/ic_lock_silent_mode_off"
         tools:ignore="MissingConstraints" />
@@ -127,14 +112,12 @@
         android:id="@+id/svc_rad_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/white"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.851"
+        app:layout_constraintBottom_toTopOf="@+id/svc_stop_btn"
+        app:layout_constraintStart_toEndOf="@+id/svc_mus_btn"
         app:srcCompat="@android:drawable/btn_radio"
         tools:ignore="MissingConstraints" />
 
@@ -153,9 +136,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
