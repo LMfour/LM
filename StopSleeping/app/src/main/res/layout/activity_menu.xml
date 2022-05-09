@@ -18,35 +18,32 @@
             android:layout_width="424dp"
             android:layout_height="248dp"
             android:layout_marginStart="-8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:scaleType='fitXY'
             app:srcCompat="@drawable/menu_back_img" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/menu_user_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="45dp"
-            android:layout_marginTop="215dp"
-            app:layout_constraintBottom_toBottomOf="@+id/menu_round_img"
-            app:srcCompat="@android:drawable/screen_background_light" />
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="210dp"
+            app:layout_constraintBottom_toBottomOf="@+id/menu_round_img" />
 
         <TextView
             android:id="@+id/menu_nick_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="269dp"
-            android:text="닉네임"
+            android:layout_marginTop="259dp"
             app:layout_constraintStart_toEndOf="@+id/menu_user_img" />
 
         <TextView
-            android:id="@+id/menu_id_txt"
+            android:id="@+id/menu_email_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="150dp"
-            android:layout_marginTop="290dp"
-            android:text="ID : 123456"
+            android:layout_marginTop="280dp"
             app:layout_constraintStart_toStartOf="@+id/menu_nick_txt" />
 
         <ImageButton
@@ -64,7 +61,7 @@
             android:layout_width="426dp"
             android:layout_height="53dp"
             android:layout_marginStart="-8dp"
-            android:layout_marginTop="330dp"
+            android:layout_marginTop="320dp"
             android:scaleType='fitXY'
             app:layout_constraintTop_toBottomOf="@+id/menu_back_img"
             app:srcCompat="@drawable/bottom_round" />
@@ -74,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="84dp"
-            android:layout_marginTop="338dp"
+            android:layout_marginTop="328dp"
             android:text="마이페이지"
             android:textSize="18dp" />
 
@@ -83,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="287dp"
-            android:layout_marginTop="338dp"
+            android:layout_marginTop="328dp"
             android:text="설정"
             android:textSize="18dp" />
 

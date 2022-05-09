@@ -57,18 +57,14 @@
         app:layout_constraintStart_toStartOf="@+id/lg_pw_input"
         app:layout_constraintTop_toBottomOf="@+id/lg_pw_input" />
 
-    <android.widget.Button
+    <ImageButton
         android:id="@+id/lg_kakao_btn"
-        android:layout_width="320dp"
+        android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="8dp"
-        android:background="#FAE100"
-        android:text="카카오 계정으로 로그인"
-        android:textColor="#2E181A"
-        android:textSize="18dp"
-        android:textStyle="bold"
+        android:src="@drawable/kakao_login_btn"
         app:layout_constraintEnd_toEndOf="@+id/lg_login_btn"
         app:layout_constraintStart_toStartOf="@+id/lg_login_btn"
         app:layout_constraintTop_toBottomOf="@+id/lg_login_btn" />

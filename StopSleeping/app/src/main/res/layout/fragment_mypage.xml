@@ -32,7 +32,7 @@
         android:layout_width="381dp"
         android:layout_height="63dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="380dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="24dp"
-        android:text="개인정보 수정  >"
+        android:text="개인정보   >"
         android:textSize="17dp"
         app:layout_constraintEnd_toEndOf="@+id/myp_info_btn"
         app:layout_constraintTop_toTopOf="@+id/myp_info_btn" />
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginTop="338dp"
+        android:layout_marginTop="328dp"
         android:text="마이페이지"
         android:textSize="18dp"
         android:textStyle="bold"
