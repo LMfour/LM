@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StopSleeping">
         <activity
+            android:name=".ChangeSongActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChangeCountActivity"
             android:exported="false" />
         <activity
@@ -60,7 +63,7 @@
                 <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
                 <data
                     android:host="oauth"
-                    android:scheme="kakaoa58703f89eb4b84d90b13f538d1a1a6e" />
+                    android:scheme="kakao9f214f51bde3bf2555a4d0d0b1a9666b" />
             </intent-filter>
         </activity>
     </application>

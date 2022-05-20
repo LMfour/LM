@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,10 +29,11 @@ public class ServiceActivity extends AppCompatActivity {
     private static final String TAG = "ServiceActivity";
 
     private Button btn_stop;
-    //private FloatingActionButton btn_menu;
     private FloatingActionButton btn_navi;
-
     private TextView nickName, email;
+    private FloatingActionButton btn_Change_want_song;
+
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,23 @@ public class ServiceActivity extends AppCompatActivity {
 
         btn_stop=findViewById(R.id.svc_stop_btn);
         btn_navi=findViewById(R.id.svc_loc_btn);
-        //btn_menu=findViewById(R.id.svc_menu_btn);
 
         nickName = findViewById(R.id.svc_name_txt);
         email = findViewById(R.id.svc_email_txt);
+
+        btn_Change_want_song=findViewById(R.id.svc_mus_btn);
+
+
+        // 운전시작 버튼 클릭시 서비스 페이지로 이동
+        btn_Change_want_song.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(ServiceActivity.this, ChangeSongActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         // 운전중지 버튼 클릭시 테스트 페이지로 이동
         btn_stop.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +121,8 @@ public class ServiceActivity extends AppCompatActivity {
                 return null;
             }
         });
+
     }
+
 
 }

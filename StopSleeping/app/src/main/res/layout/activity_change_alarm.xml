@@ -7,6 +7,264 @@
     tools:context=".ChangeAlarmActivity">
 
     <ImageView
+        android:id="@+id/sing_listen_view3"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType='fitXY'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        app:srcCompat="@drawable/menu_round_btn" />
+
+    <ImageButton
+        android:id="@+id/sing_stop_btn3"
+        android:layout_width="33dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78"
+        app:srcCompat="@drawable/stop_sing" />
+
+    <TextView
+        android:id="@+id/textView_listen_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="쨍그랑소리"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77" />
+
+    <ImageButton
+        android:id="@+id/sing_start_btn3"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78"
+        app:srcCompat="@drawable/start_sing" />
+
+    <ImageView
+        android:id="@+id/sing_listen_view1"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType='fitXY'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597"
+        app:srcCompat="@drawable/menu_round_btn" />
+
+    <TextView
+        android:id="@+id/textView_listen_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="사이렌"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/sing_start_btn1"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.588"
+        app:srcCompat="@drawable/start_sing" />
+
+    <ImageButton
+        android:id="@+id/sing_stop_btn1"
+        android:layout_width="33dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58000004"
+        app:srcCompat="@drawable/stop_sing" />
+
+    <ImageView
+        android:id="@+id/sing_listen_view2"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType='fitXY'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.699"
+        app:srcCompat="@drawable/menu_round_btn" />
+
+    <ImageButton
+        android:id="@+id/sing_start_btn2"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689"
+        app:srcCompat="@drawable/start_sing" />
+
+    <ImageButton
+        android:id="@+id/sing_stop_btn2"
+        android:layout_width="33dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.68"
+        app:srcCompat="@drawable/stop_sing" />
+
+    <TextView
+        android:id="@+id/textView_listen_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="강아지소리"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/sing_listen_view4"
+        android:layout_width="381dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:scaleType='fitXY'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901"
+        app:srcCompat="@drawable/menu_round_btn" />
+
+    <ImageButton
+        android:id="@+id/sing_stop_btn4"
+        android:layout_width="33dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.871"
+        app:srcCompat="@drawable/stop_sing" />
+
+    <TextView
+        android:id="@+id/textView_listen_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="천둥소리"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.872"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/sing_start_btn4"
+        android:layout_width="56dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/transparent"
+        android:scaleType='centerInside'
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.883"
+        app:srcCompat="@drawable/start_sing" />
+
+    <android.widget.Button
+        android:id="@+id/alarm_want_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/testbtn_background"
+
+        android:backgroundTint="#E19F3D"
+        android:text="알람 변경"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sing_now_background"
+        app:layout_constraintVertical_bias="0.014"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
         android:id="@+id/men_round_img"
         android:layout_width="426dp"
         android:layout_height="53dp"
@@ -37,11 +295,53 @@
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/goback_btn" />
+
+
+    <View
+        android:id="@+id/sing_now_background"
+        android:layout_width="409dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/menu_round_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/men_round_img"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/textView_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="선택된 알람"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sing_now_background"
+        app:layout_constraintTop_toBottomOf="@+id/men_round_img"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/textView_answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="78dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sing_now_background"
+        app:layout_constraintTop_toBottomOf="@+id/men_round_img"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
