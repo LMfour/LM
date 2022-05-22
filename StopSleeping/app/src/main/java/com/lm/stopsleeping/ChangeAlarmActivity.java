@@ -169,7 +169,7 @@ public class ChangeAlarmActivity extends AppCompatActivity {
         Log.e("TAG", "SELC" + alarm);
 
         if(alarm.equals("break_sound")){
-            selAlarm.setText("천둥소리");
+            selAlarm.setText("쨍그랑소리");
         } else if(alarm.equals("dog_sound")){
             selAlarm.setText("강아지소리");
         } else if(alarm.equals("siren")){
