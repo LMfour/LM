@@ -6,90 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".CheckActivity">
 
-    <ImageButton
-        android:id="@+id/chk_back_img3"
-        android:layout_width="350dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_back_img2"
-        app:srcCompat="@drawable/menu_round_btn" />
-
-    <TextView
-        android:id="@+id/chk_time_txt3"
-        android:layout_width="124dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="20dp"
-        android:text="오전 12:00:30"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/chk_back_img3"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img3" />
-
-    <ImageButton
-        android:id="@+id/chk_back_img2"
-        android:layout_width="350dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_back_img1"
-        app:srcCompat="@drawable/menu_round_btn" />
-
-    <ImageButton
-        android:id="@+id/chk_trash_img2"
-        android:layout_width="22dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="@+id/chk_back_img2"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img2"
-        app:srcCompat="@drawable/trashcan" />
-
-    <TextView
-        android:id="@+id/chk_time_txt2"
-        android:layout_width="124dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="20dp"
-        android:text="오전 11:55:30"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/chk_back_img2"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img2" />
-
-    <TextView
-        android:id="@+id/chk_day_txt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2022/03/22"
-        app:layout_constraintStart_toStartOf="@+id/chk_time_txt2"
-        app:layout_constraintTop_toBottomOf="@+id/chk_time_txt2" />
-
-    <ImageButton
-        android:id="@+id/chk_trash_img3"
-        android:layout_width="22dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="@+id/chk_back_img3"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img3"
-        app:srcCompat="@drawable/trashcan" />
-
 
     <ImageButton
         android:id="@+id/men_back_btn"
@@ -102,60 +18,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/goback_btn" />
-
-    <ImageButton
-        android:id="@+id/chk_back_img1"
-        android:layout_width="350dp"
-        android:layout_height="94dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modinfo_round_img"
-        app:srcCompat="@drawable/menu_round_btn" />
-
-    <TextView
-        android:id="@+id/chk_day_txt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2022/03/22"
-        app:layout_constraintStart_toStartOf="@+id/chk_time_txt3"
-        app:layout_constraintTop_toBottomOf="@+id/chk_time_txt3" />
-
-    <TextView
-        android:id="@+id/chk_day_txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2022/03/24"
-        app:layout_constraintStart_toStartOf="@+id/chk_time_txt1"
-        app:layout_constraintTop_toBottomOf="@+id/chk_time_txt1" />
-
-    <TextView
-        android:id="@+id/chk_time_txt1"
-        android:layout_width="124dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="20dp"
-        android:text="오후 02:42:39"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/chk_back_img1"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img1" />
-
-    <ImageButton
-        android:id="@+id/chk_trash_img1"
-        android:layout_width="22dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType='fitXY'
-        app:layout_constraintEnd_toEndOf="@+id/chk_back_img1"
-        app:layout_constraintTop_toTopOf="@+id/chk_back_img1"
-        app:srcCompat="@drawable/trashcan" />
 
     <ImageView
         android:id="@+id/modinfo_round_img"
@@ -183,5 +45,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_date"
+        android:layout_width="409dp"
+        android:layout_height="487dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/check_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

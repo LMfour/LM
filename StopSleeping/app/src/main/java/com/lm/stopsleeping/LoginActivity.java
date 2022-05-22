@@ -25,12 +25,14 @@ import kotlin.jvm.functions.Function2;
 public class LoginActivity extends AppCompatActivity {
     private TextView btn_nlog;
     private View btn_kakao_login;
+    private DBHelper mDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        setInit();
 
         btn_kakao_login = findViewById(R.id.lg_kakao_btn);
         btn_nlog = findViewById(R.id.lg_nonlg_btn);
@@ -71,6 +73,11 @@ public class LoginActivity extends AppCompatActivity {
 
         updateKakaoLogin();
         getAppKeyHash();
+    }
+
+    private void setInit() {
+        mDBHelper = new DBHelper(this);
+        mDBHelper.UpdateDB();
     }
 
     // 로그인이 되어있는지 안되어있는지 확인 후 button 처리

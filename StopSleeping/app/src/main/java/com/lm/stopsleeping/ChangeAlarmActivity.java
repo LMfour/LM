@@ -6,21 +6,26 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.widget.Toast;
 
 public class ChangeAlarmActivity extends AppCompatActivity {
 
     ImageButton btn_back;
-    TextView textview_result;
     MediaPlayer mediaPlayer;
     // 시작버튼
     ImageButton startButton1;
@@ -32,6 +37,9 @@ public class ChangeAlarmActivity extends AppCompatActivity {
     ImageButton stopButton2;
     ImageButton stopButton3;
     ImageButton stopButton4;
+    TextView selAlarm;
+
+    private DBHelper mDBHelper;
 
 
 
@@ -52,12 +60,9 @@ public class ChangeAlarmActivity extends AppCompatActivity {
         startButton4 = findViewById(R.id.sing_start_btn4);
         stopButton4 = findViewById(R.id.sing_stop_btn4);
 
-
-
-        textview_result = (TextView) findViewById(R.id.textView_answer);
+        selAlarm = findViewById(R.id.selected_alarm);
 
         Button button = (Button) findViewById(R.id.alarm_want_btn);
-        final TextView tvSelect = findViewById(R.id.textView_answer);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +71,7 @@ public class ChangeAlarmActivity extends AppCompatActivity {
             }
         });
 
+        viewAlarm();
 
         btn_back = findViewById(R.id.men_back_btn);
         // 뒤로가기 버튼 클릭시 메뉴 페이지로 이동
@@ -157,6 +163,22 @@ public class ChangeAlarmActivity extends AppCompatActivity {
         });
     }
 
+    private void viewAlarm() {
+        mDBHelper = new DBHelper(this);
+        String alarm = mDBHelper.SelectAlarm();
+        Log.e("TAG", "SELC" + alarm);
+
+        if(alarm.equals("break_sound")){
+            selAlarm.setText("천둥소리");
+        } else if(alarm.equals("dog_sound")){
+            selAlarm.setText("강아지소리");
+        } else if(alarm.equals("siren")){
+            selAlarm.setText("사이렌");
+        } else if(alarm.equals("thunder")){
+            selAlarm.setText("천둥소리");
+        }
+    }
+
     void show()
     {
         final List<String> ListItems = new ArrayList<>();
@@ -170,9 +192,8 @@ public class ChangeAlarmActivity extends AppCompatActivity {
         builder.setTitle("노래 선택");
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int pos) {
-                String selectedText = items[pos].toString();
-                // Toast.makeText(ChangeAlarmActivity.this, selectedText, Toast.LENGTH_LONG).show();
-                textview_result.setText(selectedText);
+                mDBHelper.UpdateAlarm(items[pos]);
+                viewAlarm();
             }
         });
         builder.show();

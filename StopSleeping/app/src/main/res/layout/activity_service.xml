@@ -119,7 +119,7 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/svc_rad_btn"
+        android:id="@+id/svc_alm_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
@@ -156,6 +156,25 @@
         android:text="기록"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/svc_warn_switch" />
+
+    <TextView
+        android:id="@+id/svc_cnt_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8.5dp"
+        app:layout_constraintStart_toStartOf="@+id/svc_warn_switch"
+        app:layout_constraintTop_toTopOf="@+id/svc_warn_switch" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/black"
+        android:text="회"
+        app:layout_constraintStart_toEndOf="@+id/svc_cnt_txt"
+        app:layout_constraintTop_toTopOf="@+id/svc_cnt_txt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

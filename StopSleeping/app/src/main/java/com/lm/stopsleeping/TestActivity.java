@@ -24,10 +24,14 @@ public class TestActivity extends AppCompatActivity {
     private TextView nickName, email;
     private ImageView profileImage;
 
+    private DBHelper mDBHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        
+        setInit();
 
 
         nickName = findViewById(R.id.test_name_txt);
@@ -55,6 +59,11 @@ public class TestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setInit() {
+        mDBHelper = new DBHelper(this);
+        mDBHelper.UpdateCnt(0);
     }
 
     // 로그인이 되어있는지 안되어있는지 확인 후 button 처리

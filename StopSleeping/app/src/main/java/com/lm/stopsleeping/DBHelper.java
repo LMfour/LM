@@ -1,0 +1,136 @@
+package com.lm.stopsleeping;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+
+public class DBHelper extends SQLiteOpenHelper {
+
+    private static final int DB_VERSION = 1;
+    private static final String DB_NAME = "LM.db";
+    private int sleepCnt = 0;
+    private String selAlarm;
+
+    public DBHelper(@Nullable Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // 데이터베이스 생성시 호출
+        // 데이터베이스 -> 테이블 -> 컬럼 -> 값
+        db.execSQL("CREATE TABLE IF NOT EXISTS SleepTime (id INTEGER PRIMARY KEY AUTOINCREMENT, sleepDate TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS User (id INTEGER PRIMARY KEY AUTOINCREMENT, sleepCnt INTEGER, alarm TEXT," +
+                "song TEXT, firstSleep TEXT, secondSleep TEXT, thirdSleep TEXT )");
+
+        db.execSQL("INSERT INTO User (sleepCnt, alarm, song, firstSleep, secondSleep, thirdSleep) " +
+                "VALUES('" + 0 + "','" + "NO" + "','" + "NO" + "','" + "NO" + "','" + "NO" + "','" + "NO" + "');");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onCreate(db);
+    }
+
+    // Date Select문
+    public ArrayList<DateItem> getDateList() {
+        ArrayList<DateItem> dateItems = new ArrayList<>();
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM SleepTime ORDER BY writeData DESC", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                String sleepDate = cursor.getString(cursor.getColumnIndexOrThrow("sleepDate"));
+
+                DateItem dateItem = new DateItem();
+                dateItem.setId(id);
+                dateItem.setSleepDate(sleepDate);
+
+                dateItems.add(dateItem);
+            }
+        }
+        cursor.close();
+        return dateItems;
+    }
+
+    // Date Insert문
+    public void InsertDate(String _sleepDate) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT INTO SleepTime (sleepDate) VALUES('" + _sleepDate + "');");
+    }
+
+    // Date delete문
+    public void DeleteDate(int _id) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM SleepTime WHERE id = '" + _id + "'");
+    }
+
+    public void UpdateCnt(int cnt) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE User SET sleepCnt = '" + cnt + "'  WHERE id = 1");
+    }
+
+    public int SelectCnt() {
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT sleepCnt from User WHERE id = 1", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                sleepCnt = cursor.getInt(cursor.getColumnIndexOrThrow("sleepCnt"));
+            }
+        }
+        cursor.close();
+        return sleepCnt;
+    }
+
+    public void UpdateAlarm(CharSequence alm) {
+        SQLiteDatabase db = getWritableDatabase();
+        if(alm == "사이렌") {
+            db.execSQL("UPDATE User SET alarm = 'siren' WHERE id = 1");
+        }
+        else if(alm == "강아지소리") {
+            db.execSQL("UPDATE User SET alarm = 'dog_sound' WHERE id = 1");
+        }
+        else if(alm == "쨍그랑소리") {
+            db.execSQL("UPDATE User SET alarm = 'break_sound' WHERE id = 1");
+        }
+        else if(alm == "천둥소리") {
+            db.execSQL("UPDATE User SET alarm = 'thunder' WHERE id = 1");
+        }
+    }
+
+    public String SelectAlarm(){
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT alarm from User WHERE id = 1", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                selAlarm = cursor.getString(cursor.getColumnIndexOrThrow("alarm"));
+            }
+        }
+        cursor.close();
+        return selAlarm;
+    }
+
+
+
+    public void UpdateDB(){
+        SQLiteDatabase db = getWritableDatabase();
+    }
+
+
+
+}

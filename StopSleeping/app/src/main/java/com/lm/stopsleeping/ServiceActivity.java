@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +22,11 @@ import com.kakao.sdk.navi.model.NaviOption;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.User;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
@@ -30,15 +36,23 @@ public class ServiceActivity extends AppCompatActivity {
 
     private Button btn_stop;
     private FloatingActionButton btn_navi;
-    private TextView nickName, email;
+    private TextView nickName, email, cnt;
     private FloatingActionButton btn_Change_want_song;
+    private FloatingActionButton btn_alarm;
 
     MediaPlayer mediaPlayer;
+
+    private ArrayList<DateItem> mDateItems;
+    private DBHelper mDBHelper;
+    private TextView btn_rcd;
+    private CustomAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service);
+        
+        setInit();
 
         btn_stop=findViewById(R.id.svc_stop_btn);
         btn_navi=findViewById(R.id.svc_loc_btn);
@@ -47,6 +61,7 @@ public class ServiceActivity extends AppCompatActivity {
         email = findViewById(R.id.svc_email_txt);
 
         btn_Change_want_song=findViewById(R.id.svc_mus_btn);
+        btn_alarm = findViewById(R.id.svc_alm_btn);
 
 
         // 운전시작 버튼 클릭시 서비스 페이지로 이동
@@ -55,6 +70,13 @@ public class ServiceActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =  new Intent(ServiceActivity.this, ChangeSongActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btn_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                runAlarm();
             }
         });
 
@@ -103,6 +125,56 @@ public class ServiceActivity extends AppCompatActivity {
          */
 
         updateKakaoLogin();
+    }
+
+    private void runAlarm() {
+        String url = "android.resource://" + getPackageName() + "/";
+        int id = getRawResIdByName(mDBHelper.SelectAlarm());
+        try{
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            mediaPlayer.setDataSource(getApplicationContext(),Uri.parse(url+id));
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        } catch (IOException e){
+            Log.e("TAG", "Error: " + e);
+        }
+    }
+
+    private int getRawResIdByName(String resName) {
+        String pkgName = this.getPackageName();
+        // Return 0 if not found.
+        int resID = this.getResources().getIdentifier(resName, "raw", pkgName);
+        Log.i("AndroidVideoView", "Res Name: " + resName + "==> Res ID = " + resID);
+        return resID;
+    }
+
+    private void setInit() {
+        mDBHelper = new DBHelper(this);
+        btn_rcd = findViewById(R.id.svc_record);
+        cnt = findViewById(R.id.svc_cnt_txt);
+        mDateItems = new ArrayList<>();
+
+        cnt.setText(Integer.toString(mDBHelper.SelectCnt()));
+
+        btn_rcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateCnt();
+                runAlarm();
+            }
+        });
+
+    }
+
+    private void updateCnt() {
+        int sleepCnt = mDBHelper.SelectCnt();
+        sleepCnt += 1;
+        // Insert Database
+        String currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());    // 현재시간
+        mDBHelper.InsertDate(currentTime);
+        mDBHelper.UpdateCnt(sleepCnt);
+        cnt.setText(Integer.toString(mDBHelper.SelectCnt()));
     }
 
     // 로그인이 되어있는지 안되어있는지 확인 후 button 처리
