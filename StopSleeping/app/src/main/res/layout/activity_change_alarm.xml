@@ -305,7 +305,7 @@
 
     <View
         android:id="@+id/sing_now_background"
-        android:layout_width="409dp"
+        android:layout_width="380dp"
         android:layout_height="100dp"
         android:layout_marginTop="33dp"
         android:background="@drawable/menu_round_btn"
@@ -321,11 +321,11 @@
         android:id="@+id/textView_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="60dp"
         android:text="선택된 알람"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/sing_now_background"
         app:layout_constraintTop_toBottomOf="@+id/men_round_img"
         tools:ignore="MissingConstraints" />
@@ -334,10 +334,11 @@
         android:id="@+id/selected_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_question" />
+        android:textSize="18dp"
+        app:layout_constraintStart_toEndOf="@+id/textView_question"
+        app:layout_constraintTop_toTopOf="@+id/textView_question" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

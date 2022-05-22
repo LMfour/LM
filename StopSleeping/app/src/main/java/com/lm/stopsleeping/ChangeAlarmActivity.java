@@ -64,6 +64,7 @@ public class ChangeAlarmActivity extends AppCompatActivity {
 
         Button button = (Button) findViewById(R.id.alarm_want_btn);
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

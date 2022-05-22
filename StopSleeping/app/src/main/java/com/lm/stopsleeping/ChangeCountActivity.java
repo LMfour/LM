@@ -23,10 +23,10 @@ public class ChangeCountActivity extends AppCompatActivity {
     Button count_sellect_btn1;
     Button count_sellect_btn2;
     Button count_sellect_btn3;
-
-    TextView textview_result_1;
-    TextView textview_result_2;
-    TextView textview_result_3;
+    private DBHelper mDBHelper;
+    private TextView firstFunc;
+    private TextView secondFunc;
+    private TextView thirdFunc;
 
 
 
@@ -39,12 +39,15 @@ public class ChangeCountActivity extends AppCompatActivity {
         count_sellect_btn1 = (Button) findViewById(R.id.count_sellect_btn1);
         count_sellect_btn2 = (Button) findViewById(R.id.count_sellect_btn2);
         count_sellect_btn3 = (Button) findViewById(R.id.count_sellect_btn3);
+        mDBHelper = new DBHelper(this);
 
+        firstFunc = findViewById(R.id.first_func);
+        secondFunc = findViewById(R.id.second_func);
+        thirdFunc = findViewById(R.id.thrid_func);
 
-        textview_result_1 = (TextView) findViewById(R.id.alarm_count_txt);
-        textview_result_2 = (TextView) findViewById(R.id.sing_count_txt);
-        textview_result_3 = (TextView) findViewById(R.id.station_count_txt);
-
+        viewFirst();
+        viewSecond();
+        viewThird();
 
         count_sellect_btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,17 +93,14 @@ public class ChangeCountActivity extends AppCompatActivity {
         ListItems.add("알람");
         ListItems.add("노래");
         ListItems.add("휴게소 안내");
-        final CharSequence[] items =  ListItems.toArray(new String[ ListItems.size()]);
+        final String[] items =  ListItems.toArray(new String[ ListItems.size()]);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        //    builder.setTitle("선택");
-
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int pos) {
-                String selectedText = items[pos].toString();
-                // Toast.makeText(ChangeAlarmActivity.this, selectedText, Toast.LENGTH_LONG).show();
-                textview_result_1.setText(selectedText);
+                mDBHelper.UpdateFirstSleep(items[pos]);
+                viewFirst();
             }
         });
         builder.show();
@@ -113,7 +113,7 @@ public class ChangeCountActivity extends AppCompatActivity {
         ListItems.add("알람");
         ListItems.add("노래");
         ListItems.add("휴게소 안내");
-        final CharSequence[] items =  ListItems.toArray(new String[ ListItems.size()]);
+        final String[] items =  ListItems.toArray(new String[ ListItems.size()]);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -121,9 +121,8 @@ public class ChangeCountActivity extends AppCompatActivity {
 
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int pos) {
-                String selectedText = items[pos].toString();
-                // Toast.makeText(ChangeAlarmActivity.this, selectedText, Toast.LENGTH_LONG).show();
-                textview_result_2.setText(selectedText);
+                mDBHelper.UpdateSecondSleep(items[pos]);
+                viewSecond();
             }
         });
         builder.show();
@@ -135,7 +134,7 @@ public class ChangeCountActivity extends AppCompatActivity {
         ListItems.add("알람");
         ListItems.add("노래");
         ListItems.add("휴게소 안내");
-        final CharSequence[] items =  ListItems.toArray(new String[ ListItems.size()]);
+        final String[] items =  ListItems.toArray(new String[ ListItems.size()]);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
@@ -143,12 +142,23 @@ public class ChangeCountActivity extends AppCompatActivity {
 
         builder.setItems(items, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int pos) {
-                String selectedText = items[pos].toString();
-                // Toast.makeText(ChangeAlarmActivity.this, selectedText, Toast.LENGTH_LONG).show();
-                textview_result_3.setText(selectedText);
+                mDBHelper.UpdateThirdSleep(items[pos]);
+                viewThird();
             }
         });
         builder.show();
+    }
+
+    private void viewFirst() {
+        firstFunc.setText(mDBHelper.SelectFirstSleep());
+    }
+
+    private void viewSecond() {
+        secondFunc.setText(mDBHelper.SelectSecondSleep());
+    }
+
+    private void viewThird() {
+        thirdFunc.setText(mDBHelper.SelectThirdSleep());
     }
 
 

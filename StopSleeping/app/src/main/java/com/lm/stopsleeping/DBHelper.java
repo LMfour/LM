@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -16,6 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "LM.db";
     private int sleepCnt = 0;
     private String selAlarm;
+    private String firstSleep, secondSleep, thirdSleep;
 
     public DBHelper(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -30,7 +32,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "song TEXT, firstSleep TEXT, secondSleep TEXT, thirdSleep TEXT )");
 
         db.execSQL("INSERT INTO User (sleepCnt, alarm, song, firstSleep, secondSleep, thirdSleep) " +
-                "VALUES('" + 0 + "','" + "NO" + "','" + "NO" + "','" + "NO" + "','" + "NO" + "','" + "NO" + "');");
+                "VALUES('" + 0 + "','" + "" + "','" + "" + "','" + "" + "','" + "" + "','" + "" + "');");
     }
 
     @Override
@@ -125,6 +127,65 @@ public class DBHelper extends SQLiteOpenHelper {
         return selAlarm;
     }
 
+    public void UpdateFirstSleep(String first) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE User SET firstSleep = '" + first + "' WHERE id = 1");
+    }
+
+    public void UpdateSecondSleep(String second) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE User SET secondSleep = '" + second + "' WHERE id = 1");
+    }
+
+    public void UpdateThirdSleep(String third) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE User SET thirdSleep = '" + third + "' WHERE id = 1");
+    }
+
+    public String SelectFirstSleep(){
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT firstSleep from User WHERE id = 1", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                 firstSleep = cursor.getString(cursor.getColumnIndexOrThrow("firstSleep"));
+            }
+        }
+        cursor.close();
+        return firstSleep;
+    }
+
+    public String SelectSecondSleep(){
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT secondSleep from User WHERE id = 1", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                secondSleep = cursor.getString(cursor.getColumnIndexOrThrow("secondSleep"));
+            }
+        }
+        cursor.close();
+        return secondSleep;
+    }
+
+    public String SelectThirdSleep(){
+
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT thirdSleep from User WHERE id = 1", null);
+
+        if(cursor.getCount() != 0) {
+            // 조회해온 데이터가 있을 때 내부 수행
+            while(cursor.moveToNext()){
+                thirdSleep = cursor.getString(cursor.getColumnIndexOrThrow("thirdSleep"));
+            }
+        }
+        cursor.close();
+        return thirdSleep;
+    }
 
 
     public void UpdateDB(){

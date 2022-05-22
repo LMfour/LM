@@ -47,6 +47,7 @@ public class ServiceActivity extends AppCompatActivity {
     private TextView btn_rcd;
     private CustomAdapter mAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,19 +96,7 @@ public class ServiceActivity extends AppCompatActivity {
         btn_navi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(NaviClient.getInstance().isKakaoNaviInstalled(getApplicationContext())){
-                    // 카카오내비 앱으로 길 안내 - WGS84
-                    startActivity(NaviClient.getInstance().navigateIntent(
-                            new Location("오창휴게소 하남방향", "127.34636913237533", "36.75147718869277"),
-                            new NaviOption(CoordType.WGS84))
-                    );
-
-                } else{
-                    // 카카오내비 설치 페이지로 이동
-                    Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.WEB_NAVI_INSTALL))
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
+                kakaoNavi();
             }
         });
 
@@ -125,6 +114,22 @@ public class ServiceActivity extends AppCompatActivity {
          */
 
         updateKakaoLogin();
+    }
+
+    private void kakaoNavi() {
+        if(NaviClient.getInstance().isKakaoNaviInstalled(getApplicationContext())){
+            // 카카오내비 앱으로 길 안내 - WGS84
+            startActivity(NaviClient.getInstance().navigateIntent(
+                    new Location("오창휴게소 하남방향", "127.34636913237533", "36.75147718869277"),
+                    new NaviOption(CoordType.WGS84))
+            );
+
+        } else{
+            // 카카오내비 설치 페이지로 이동
+            Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.WEB_NAVI_INSTALL))
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
     }
 
     private void runAlarm() {
@@ -160,14 +165,38 @@ public class ServiceActivity extends AppCompatActivity {
         btn_rcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateCnt();
-                runAlarm();
+                int count = updateCnt();
+                sleepFunction(count);
             }
         });
 
     }
 
-    private void updateCnt() {
+    private void sleepFunction(int count) {
+        String func;
+        if(count == 1){
+            func = mDBHelper.SelectFirstSleep();
+            sleepFunc(func);
+        } else if(count == 2){
+            func = mDBHelper.SelectSecondSleep();
+            sleepFunc(func);
+        } else if(count >= 3){
+            func = mDBHelper.SelectThirdSleep();
+            sleepFunc(func);
+        }
+    }
+
+    private void sleepFunc(String func) {
+        if(func.equals("노래")){
+            Log.e("TAG","2: " + func);
+        } else if(func.equals("알람")){
+            runAlarm();
+        } else if(func.equals("휴게소 안내")){
+            kakaoNavi();
+        }
+    }
+
+    private int updateCnt() {
         int sleepCnt = mDBHelper.SelectCnt();
         sleepCnt += 1;
         // Insert Database
@@ -175,6 +204,8 @@ public class ServiceActivity extends AppCompatActivity {
         mDBHelper.InsertDate(currentTime);
         mDBHelper.UpdateCnt(sleepCnt);
         cnt.setText(Integer.toString(mDBHelper.SelectCnt()));
+
+        return sleepCnt;
     }
 
     // 로그인이 되어있는지 안되어있는지 확인 후 button 처리
