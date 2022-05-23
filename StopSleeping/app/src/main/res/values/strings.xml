@@ -2,4 +2,6 @@
     <string name="app_name">Stop Sleeping</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    //페이스북 앱 키
+    <string name="facebook_app_id">1246868859385537</string>
 </resources>

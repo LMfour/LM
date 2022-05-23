@@ -22,10 +22,24 @@ import java.security.MessageDigest;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 
+import com.facebook.CallbackManager;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.login.LoginManager;
+
+import java.util.Arrays;
+
 public class LoginActivity extends AppCompatActivity {
     private TextView btn_nlog;
     private View btn_kakao_login;
+
     private DBHelper mDBHelper;
+
+    private View btn_facebook_login;
+    private View btn_naver_login;
+
+    private FacebookLoginCallback mLoginCallback;
+    private CallbackManager mCallbackManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +50,21 @@ public class LoginActivity extends AppCompatActivity {
 
         btn_kakao_login = findViewById(R.id.lg_kakao_btn);
         btn_nlog = findViewById(R.id.lg_nonlg_btn);
+        btn_naver_login = findViewById(R.id.lg_naver_btn);
+        mCallbackManager = CallbackManager.Factory.create();
+        mLoginCallback = new FacebookLoginCallback();
+
+        btn_facebook_login = (View) findViewById(R.id.btn_facebook_login);
+        btn_facebook_login.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                LoginManager loginManager = LoginManager.getInstance();
+                loginManager.logInWithReadPermissions(LoginActivity.this,
+                        Arrays.asList("public_profile", "email"));
+                loginManager.registerCallback(mCallbackManager, mLoginCallback);
+            }
+        });
+
 
         Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>(){
             @Override
@@ -70,9 +99,25 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // 네이버 로그인 버튼 클릭시 테스트 페이지로 이동
+        btn_naver_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =  new Intent(LoginActivity.this, TestActivity.class);
+                startActivity(intent);
+            }
+        });
 
         updateKakaoLogin();
         getAppKeyHash();
+    }
+    // 페이스북 로그인 연동
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+        Intent intent =  new Intent(LoginActivity.this, TestActivity.class);
+        startActivity(intent);
     }
 
     private void setInit() {

@@ -3,6 +3,9 @@ package com.lm.stopsleeping;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -28,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 
 public class ServiceActivity extends AppCompatActivity {
@@ -61,6 +65,7 @@ public class ServiceActivity extends AppCompatActivity {
         nickName = findViewById(R.id.svc_name_txt);
         email = findViewById(R.id.svc_email_txt);
 
+
         btn_Change_want_song=findViewById(R.id.svc_mus_btn);
         btn_alarm = findViewById(R.id.svc_alm_btn);
 
@@ -87,9 +92,35 @@ public class ServiceActivity extends AppCompatActivity {
         btn_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(ServiceActivity.this, TestActivity.class);
-                startActivity(intent);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ServiceActivity.this);
+                builder.setTitle("안내");
+                builder.setMessage("운전을 중지하시겠습니까?");
+
+                // 운전중지 버튼 팝업 '예' 클릭시 테스트 페이지로 이동
+                builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        
+
+                        Intent intent =  new Intent(ServiceActivity.this, TestActivity.class);
+                        startActivity(intent);
+
+
+
+                    }
+                });
+                // 운전중지 버튼 팝업 '아니오' 클릭시 팝업창 내려감
+                builder.setNegativeButton("아니오", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.show();
             }
+
         });
 
 

@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StopSleeping">
+        <!-- 페이스북 메타데이터 -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="1246868859385537" />
         <activity
             android:name=".ChangeSongActivity"
             android:exported="false" />
@@ -63,7 +67,7 @@
                 <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
                 <data
                     android:host="oauth"
-                    android:scheme="kakaoa58703f89eb4b84d90b13f538d1a1a6e" />
+                    android:scheme="kakao84245f84f98ab84c69d896f82f71efd8" />
             </intent-filter>
         </activity>
     </application>
