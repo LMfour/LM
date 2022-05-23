@@ -200,8 +200,9 @@ public class ServiceActivity extends AppCompatActivity {
         int sleepCnt = mDBHelper.SelectCnt();
         sleepCnt += 1;
         // Insert Database
-        String currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());    // 현재시간
-        mDBHelper.InsertDate(currentTime);
+        String sleepDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        String sleepTime = new SimpleDateFormat("a hh:mm:ss").format(new Date());
+        mDBHelper.insertRecord(sleepDate, sleepTime);
         mDBHelper.UpdateCnt(sleepCnt);
         cnt.setText(Integer.toString(mDBHelper.SelectCnt()));
 

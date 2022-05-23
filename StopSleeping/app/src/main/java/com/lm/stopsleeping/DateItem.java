@@ -2,7 +2,11 @@ package com.lm.stopsleeping;
 
 public class DateItem { // getter and setter
     private int id;
-    private String sleepDate;   // sleep 시간
+    private String sleepDate;
+    private String sleepTime;
+
+    public DateItem() {
+    }
 
     public int getId() {
         return id;
@@ -12,14 +16,19 @@ public class DateItem { // getter and setter
         this.id = id;
     }
 
-    public DateItem() {
-    }
-
     public String getSleepDate() {
         return sleepDate;
     }
 
     public void setSleepDate(String sleepDate) {
         this.sleepDate = sleepDate;
+    }
+
+    public String getSleepTime() {
+        return sleepTime;
+    }
+
+    public void setSleepTime(String sleepTime) {
+        this.sleepTime = sleepTime;
     }
 }

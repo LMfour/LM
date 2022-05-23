@@ -1,9 +1,12 @@
 package com.lm.stopsleeping;
 
 import android.content.Context;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,7 +35,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.ViewHolder holder, int position) {
-        holder.sleep_date.setText(mDateItems.get(position).getSleepDate());
+        holder.chc_day.setText(mDateItems.get(position).getSleepDate());
+        holder.chk_time.setText(mDateItems.get(position).getSleepTime());
     }
 
     @Override
@@ -42,17 +46,32 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView sleep_date;
+        private TextView chk_time;
+        private TextView chc_day;
+        private ImageButton btn_del;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            sleep_date = itemView.findViewById(R.id.chk_day);
+            chc_day = itemView.findViewById(R.id.chk_day);
+            chk_time = itemView.findViewById(R.id.chk_time);
+            btn_del = itemView.findViewById(R.id.chk_trash_img);
+
+            btn_del.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // delete table
+                    int curPos = getAdapterPosition();
+                    DateItem dateItem = mDateItems.get(curPos);
+                    mDBHelper.deleteRecord(dateItem.getId());
+
+                    // delete UI
+                    mDateItems.remove(curPos);
+                    notifyItemRemoved(curPos);
+                }
+            });
         }
     }
 
-    public void addItem(DateItem _item) {
-        mDateItems.add(0, _item);
-        notifyItemInserted(0);
-    }
+
 }

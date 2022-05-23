@@ -10,237 +10,197 @@
         android:id="@+id/sing_listen_view3"
         android:layout_width="381dp"
         android:layout_height="63dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintTop_toBottomOf="@+id/sing_listen_view2"
         app:srcCompat="@drawable/menu_round_btn" />
 
     <ImageButton
         android:id="@+id/sing_stop_btn3"
         android:layout_width="33dp"
         android:layout_height="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
+        app:layout_constraintStart_toEndOf="@+id/sing_start_btn3"
+        app:layout_constraintTop_toTopOf="@+id/sing_start_btn3"
         app:srcCompat="@drawable/stop_sing" />
 
     <TextView
         android:id="@+id/textView_listen_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
         android:text="쨍그랑소리"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/sing_listen_view3"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view3" />
 
     <ImageButton
         android:id="@+id/sing_start_btn3"
         android:layout_width="56dp"
         android:layout_height="40dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="65dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/sing_listen_view3"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view3"
         app:srcCompat="@drawable/start_sing" />
 
     <ImageView
         android:id="@+id/sing_listen_view1"
         android:layout_width="381dp"
         android:layout_height="63dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="15dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597"
+        app:layout_constraintTop_toBottomOf="@+id/sing_now_background"
         app:srcCompat="@drawable/menu_round_btn" />
 
     <TextView
         android:id="@+id/textView_listen_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
         android:text="사이렌"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/sing_listen_view1"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view1"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/sing_start_btn1"
         android:layout_width="56dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="65dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588"
+        app:layout_constraintEnd_toEndOf="@+id/sing_listen_view1"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view1"
         app:srcCompat="@drawable/start_sing" />
 
     <ImageButton
         android:id="@+id/sing_stop_btn1"
         android:layout_width="33dp"
         android:layout_height="24dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58000004"
+        android:text="invisible"
+        app:layout_constraintStart_toEndOf="@+id/sing_start_btn1"
+        app:layout_constraintTop_toTopOf="@+id/sing_start_btn1"
         app:srcCompat="@drawable/stop_sing" />
 
     <ImageView
         android:id="@+id/sing_listen_view2"
         android:layout_width="381dp"
         android:layout_height="63dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
+        app:layout_constraintTop_toBottomOf="@+id/sing_listen_view1"
         app:srcCompat="@drawable/menu_round_btn" />
 
     <ImageButton
         android:id="@+id/sing_start_btn2"
         android:layout_width="56dp"
         android:layout_height="40dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="65dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintEnd_toEndOf="@+id/sing_listen_view2"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view2"
         app:srcCompat="@drawable/start_sing" />
 
     <ImageButton
         android:id="@+id/sing_stop_btn2"
         android:layout_width="33dp"
         android:layout_height="24dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68"
+        app:layout_constraintStart_toEndOf="@+id/sing_start_btn2"
+        app:layout_constraintTop_toTopOf="@+id/sing_start_btn2"
         app:srcCompat="@drawable/stop_sing" />
 
     <TextView
         android:id="@+id/textView_listen_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
         android:text="강아지소리"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/sing_listen_view2"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view2"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/sing_listen_view4"
         android:layout_width="381dp"
         android:layout_height="63dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901"
+        app:layout_constraintTop_toBottomOf="@+id/sing_listen_view3"
         app:srcCompat="@drawable/menu_round_btn" />
 
     <ImageButton
         android:id="@+id/sing_stop_btn4"
         android:layout_width="33dp"
         android:layout_height="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871"
+        app:layout_constraintStart_toEndOf="@+id/sing_start_btn4"
+        app:layout_constraintTop_toTopOf="@+id/sing_start_btn4"
         app:srcCompat="@drawable/stop_sing" />
 
     <TextView
         android:id="@+id/textView_listen_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="19dp"
         android:text="천둥소리"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/sing_listen_view4"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view4"
         tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/sing_start_btn4"
         android:layout_width="56dp"
         android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="65dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883"
+        app:layout_constraintEnd_toEndOf="@+id/sing_listen_view4"
+        app:layout_constraintTop_toTopOf="@+id/sing_listen_view4"
         app:srcCompat="@drawable/start_sing" />
 
     <android.widget.Button
@@ -295,7 +255,7 @@
         android:layout_width="37dp"
         android:layout_height="33dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:background="@android:color/transparent"
         android:scaleType='centerInside'
         app:layout_constraintStart_toStartOf="parent"
@@ -334,8 +294,8 @@
         android:id="@+id/selected_alarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
         android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/textView_question"
         app:layout_constraintTop_toTopOf="@+id/textView_question" />

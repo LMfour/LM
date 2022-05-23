@@ -27,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // 데이터베이스 생성시 호출
         // 데이터베이스 -> 테이블 -> 컬럼 -> 값
-        db.execSQL("CREATE TABLE IF NOT EXISTS SleepTime (id INTEGER PRIMARY KEY AUTOINCREMENT, sleepDate TEXT NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS SleepRecord (id INTEGER PRIMARY KEY AUTOINCREMENT, sleepDate TEXT NOT NULL, sleepTime TEXT NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS User (id INTEGER PRIMARY KEY AUTOINCREMENT, sleepCnt INTEGER, alarm TEXT," +
                 "song TEXT, firstSleep TEXT, secondSleep TEXT, thirdSleep TEXT )");
 
@@ -40,40 +40,44 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Date Select문
-    public ArrayList<DateItem> getDateList() {
-        ArrayList<DateItem> dateItems = new ArrayList<>();
+    // Record Select
+    public ArrayList<DateItem> getRecordList() {
+        ArrayList<DateItem> recordItems = new ArrayList<>();
 
         SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM SleepTime ORDER BY writeData DESC", null);
+        Cursor cursor =db.rawQuery("SELECT * FROM SleepRecord ORDER BY sleepDate DESC", null);
 
         if(cursor.getCount() != 0) {
             // 조회해온 데이터가 있을 때 내부 수행
-            while(cursor.moveToNext()){
+            while (cursor.moveToNext()) {
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String sleepDate = cursor.getString(cursor.getColumnIndexOrThrow("sleepDate"));
+                String sleepTime = cursor.getString(cursor.getColumnIndexOrThrow("sleepTime"));
 
-                DateItem dateItem = new DateItem();
-                dateItem.setId(id);
-                dateItem.setSleepDate(sleepDate);
+                DateItem recordItem = new DateItem();
+                recordItem.setId(id);
+                recordItem.setSleepDate(sleepDate);
+                recordItem.setSleepTime(sleepTime);
 
-                dateItems.add(dateItem);
+                Log.e("TAG", id + "," + sleepDate + "," + sleepTime);
+
+                recordItems.add(recordItem);
             }
         }
         cursor.close();
-        return dateItems;
+        return recordItems;
     }
 
-    // Date Insert문
-    public void InsertDate(String _sleepDate) {
+    // Record Insert
+    public void insertRecord(String sleepDate, String sleepTime) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO SleepTime (sleepDate) VALUES('" + _sleepDate + "');");
+        db.execSQL("INSERT INTO SleepRecord (sleepDate, sleepTime) VALUES('" + sleepDate + "','" + sleepTime + "');");
     }
 
-    // Date delete문
-    public void DeleteDate(int _id) {
+    // Record Delete
+    public void deleteRecord(int id) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM SleepTime WHERE id = '" + _id + "'");
+        db.execSQL("DELETE FROM SleepRecord WHERE id = '" + id + "'");
     }
 
     public void UpdateCnt(int cnt) {
