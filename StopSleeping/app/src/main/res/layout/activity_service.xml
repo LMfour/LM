@@ -17,15 +17,12 @@
         app:layout_constraintTop_toBottomOf="@+id/svc_blank"
         app:srcCompat="@drawable/bottom_round" />
 
-    <ImageView
-        android:id="@+id/svc_back_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/svc_blank"
-        app:srcCompat="@drawable/wonchan_img2" />
+    <androidx.camera.view.PreviewView
+        android:id="@+id/svc_previewView"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/svc_menu_btn"

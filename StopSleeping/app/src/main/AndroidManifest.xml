@@ -3,6 +3,9 @@
     package="com.lm.stopsleeping">
     <!-- 인터넷 사용 권한 설정 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.camera.any"/>
 
     <application
         android:name=".KakaoApplication"
@@ -67,7 +70,7 @@
                 <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
                 <data
                     android:host="oauth"
-                    android:scheme="kakao9f214f51bde3bf2555a4d0d0b1a9666b" />
+                    android:scheme="kakao4c6c6e6678afebc2cede2163a7b2a43f" />
             </intent-filter>
         </activity>
     </application>

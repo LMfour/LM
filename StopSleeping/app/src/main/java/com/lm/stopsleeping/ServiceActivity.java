@@ -1,12 +1,21 @@
 package com.lm.stopsleeping;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.camera.core.CameraSelector;
+import androidx.camera.core.Preview;
+import androidx.camera.lifecycle.ProcessCameraProvider;
+import androidx.camera.view.PreviewView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -15,8 +24,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.kakao.sdk.navi.Constants;
 import com.kakao.sdk.navi.NaviClient;
 import com.kakao.sdk.navi.model.CoordType;
@@ -51,6 +62,22 @@ public class ServiceActivity extends AppCompatActivity {
     private TextView btn_rcd;
     private CustomAdapter mAdapter;
 
+    PreviewView previewView;
+
+    String[] REQUIRED_PERMISSIONS = {Manifest.permission.CAMERA};
+    final int REQUEST_CODE_PERMISSIONS =0;
+
+    //카메라 권한 허가
+    boolean allPermissionsGranted() {
+        for (String permission : REQUIRED_PERMISSIONS) {
+            final int result = ContextCompat.checkSelfPermission(this, permission);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +96,14 @@ public class ServiceActivity extends AppCompatActivity {
         btn_Change_want_song=findViewById(R.id.svc_mus_btn);
         btn_alarm = findViewById(R.id.svc_alm_btn);
 
+        previewView = findViewById(R.id.svc_previewView);
+
+        //권한이 있을시 바로 카메라 시작
+        if (allPermissionsGranted()) {
+            startCamera();
+        } else {
+            ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
+        }
 
         // 운전시작 버튼 클릭시 서비스 페이지로 이동
         btn_Change_want_song.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +180,40 @@ public class ServiceActivity extends AppCompatActivity {
          */
 
         updateKakaoLogin();
+    }
+
+    //초기에 카메라 권한 허가체크 로그 없을시에 실행되는 함수 -> 허가승인 먼저 실행해줌
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_CODE_PERMISSIONS) {
+            if (allPermissionsGranted()) {
+                startCamera();
+            } else {
+                Toast.makeText(this, "Permission not granted", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        }
+    }
+
+    //카메라 키는 함수
+    private void startCamera() {
+        final ListenableFuture<ProcessCameraProvider> future = ProcessCameraProvider.getInstance(this);
+        future.addListener(() -> {
+            try {
+                PreviewView viewFinder = findViewById(R.id.svc_previewView);
+
+                Preview preview = new Preview.Builder().build();
+                preview.setSurfaceProvider(viewFinder.getSurfaceProvider());
+
+                ProcessCameraProvider cameraProvider = future.get();
+                cameraProvider.unbindAll();
+                //카메라 셀렉터에서 전후면 카메라 설정 가능
+                cameraProvider.bindToLifecycle(this, CameraSelector.DEFAULT_FRONT_CAMERA, preview);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }, ContextCompat.getMainExecutor(this));
     }
 
     private void kakaoNavi() {
