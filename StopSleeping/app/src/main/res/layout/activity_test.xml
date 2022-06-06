@@ -116,7 +116,7 @@
         android:id="@+id/test_menu_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="42dp"
         android:layout_marginEnd="15dp"
         android:clickable="true"
         app:backgroundTint="@color/white"

@@ -56,14 +56,16 @@ public class ServiceActivity extends AppCompatActivity {
     private Button btn_stop;
     private FloatingActionButton btn_navi;
     private TextView nickName, email, cnt;
-    private FloatingActionButton btn_Change_want_song;
     private FloatingActionButton btn_alarm;
+    private FloatingActionButton btn_tomboy;
+
 
     MediaPlayer mediaPlayer;
 
     private ArrayList<DateItem> mDateItems;
     private DBHelper mDBHelper;
-    private TextView btn_rcd;
+    private ImageView btn_rcd;
+
     private CustomAdapter mAdapter;
 
     int sw_cnt = 0;
@@ -95,12 +97,12 @@ public class ServiceActivity extends AppCompatActivity {
 
         btn_stop=findViewById(R.id.svc_stop_btn);
         btn_navi=findViewById(R.id.svc_loc_btn);
+        btn_tomboy=findViewById(R.id.svc_mus_btn);
 
         nickName = findViewById(R.id.svc_name_txt);
         email = findViewById(R.id.svc_email_txt);
 
 
-        btn_Change_want_song=findViewById(R.id.svc_mus_btn);
         btn_alarm = findViewById(R.id.svc_alm_btn);
 
         previewView = findViewById(R.id.svc_previewView);
@@ -124,6 +126,7 @@ public class ServiceActivity extends AppCompatActivity {
             }
         });
 
+
         //권한이 있을시 바로 카메라 시작
         if (allPermissionsGranted()) {
             startCamera();
@@ -131,14 +134,6 @@ public class ServiceActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS);
         }
 
-        // 운전시작 버튼 클릭시 서비스 페이지로 이동
-        btn_Change_want_song.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =  new Intent(ServiceActivity.this, ChangeSongActivity.class);
-                startActivity(intent);
-            }
-        });
 
         btn_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +142,15 @@ public class ServiceActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_tomboy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // MediaPlayer 객체 할당
+                mediaPlayer = MediaPlayer.create(ServiceActivity.this, R.raw.tomboy2);
+                mediaPlayer.start();
+            }
+        });
 
 
         // 운전중지 버튼 클릭시 테스트 페이지로 이동
@@ -191,19 +195,6 @@ public class ServiceActivity extends AppCompatActivity {
                 kakaoNavi();
             }
         });
-
-
-
-        /*
-        // 메뉴 버튼 클릭시 메뉴 페이지로 이동
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent =  new Intent(ServiceActivity.this, MenuActivity.class);
-                startActivity(intent);
-            }
-        });
-         */
 
         updateKakaoLogin();
     }
@@ -282,7 +273,7 @@ public class ServiceActivity extends AppCompatActivity {
 
     private void setInit() {
         mDBHelper = new DBHelper(this);
-        btn_rcd = findViewById(R.id.svc_record);
+        btn_rcd = findViewById(R.id.svc_menu_btn);
         cnt = findViewById(R.id.svc_cnt_txt);
         mDateItems = new ArrayList<>();
 
@@ -314,12 +305,17 @@ public class ServiceActivity extends AppCompatActivity {
 
     private void sleepFunc(String func) {
         if(func.equals("노래")){
-            Log.e("TAG","2: " + func);
+            runSong();
         } else if(func.equals("알람")){
             runAlarm();
         } else if(func.equals("휴게소 안내")){
             kakaoNavi();
         }
+    }
+
+    private void runSong() {
+        mediaPlayer = MediaPlayer.create(ServiceActivity.this, R.raw.tomboy2);
+        mediaPlayer.start();
     }
 
 
