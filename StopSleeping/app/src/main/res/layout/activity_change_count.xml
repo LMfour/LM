@@ -47,7 +47,7 @@
 
     <View
         android:id="@+id/count_background1"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/menu_round_btn"
@@ -58,7 +58,7 @@
 
     <View
         android:id="@+id/count_background2"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/menu_round_btn"
@@ -71,7 +71,7 @@
 
     <View
         android:id="@+id/count_background3"
-        android:layout_width="370dp"
+        android:layout_width="330dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/menu_round_btn"
@@ -123,7 +123,7 @@
 
     <android.widget.Button
         android:id="@+id/count_sellect_btn1"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="37dp"
 
         android:layout_marginTop="28dp"
@@ -141,7 +141,7 @@
 
     <android.widget.Button
         android:id="@+id/count_sellect_btn2"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="37dp"
         android:layout_marginTop="28dp"
 
@@ -159,7 +159,7 @@
 
     <android.widget.Button
         android:id="@+id/count_sellect_btn3"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="37dp"
 
         android:layout_marginTop="28dp"

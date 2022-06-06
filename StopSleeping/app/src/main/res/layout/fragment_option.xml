@@ -7,7 +7,7 @@
 
     <ImageButton
         android:id="@+id/opt_chk_btn"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
@@ -29,10 +29,10 @@
 
     <ImageButton
         android:id="@+id/opt_info_btn"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="63dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="384dp"
         android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:scaleType='fitXY'
@@ -54,7 +54,7 @@
 
     <ImageButton
         android:id="@+id/opt_logout_btn"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
@@ -76,7 +76,7 @@
 
     <ImageButton
         android:id="@+id/opt_secession_btn"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="63dp"
         android:layout_marginTop="12dp"
         android:background="@android:color/transparent"
