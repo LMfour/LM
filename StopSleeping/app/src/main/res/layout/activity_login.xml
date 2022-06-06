@@ -12,12 +12,12 @@
         android:id="@+id/lg_kakao_btn"
         android:layout_width="290dp"
         android:layout_height="45dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/kakao_login_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lg_title_text" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
     <ImageButton
@@ -37,15 +37,14 @@
         android:id="@+id/lg_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="8dp"
-        android:text="졸면않되!"
-        android:textColor="#DB8213"
-        android:textSize="48sp"
+        android:text="슬기로운 운전생활"
+        android:textColor="#FFB74D"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/lg_nonlg_btn"
@@ -70,6 +69,19 @@
         app:layout_constraintEnd_toEndOf="@+id/btn_facebook_login"
         app:layout_constraintStart_toStartOf="@+id/btn_facebook_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_facebook_login" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="270dp"
+        android:layout_height="210dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/main_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
