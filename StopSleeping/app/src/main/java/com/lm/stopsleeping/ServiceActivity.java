@@ -1,5 +1,7 @@
 package com.lm.stopsleeping;
 
+import static java.sql.Types.NULL;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.camera.core.CameraSelector;
@@ -23,6 +25,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +66,9 @@ public class ServiceActivity extends AppCompatActivity {
     private TextView btn_rcd;
     private CustomAdapter mAdapter;
 
+    int sw_cnt = 0;
+    ImageView imageview = null;
+
     PreviewView previewView;
 
     String[] REQUIRED_PERMISSIONS = {Manifest.permission.CAMERA};
@@ -97,6 +104,25 @@ public class ServiceActivity extends AppCompatActivity {
         btn_alarm = findViewById(R.id.svc_alm_btn);
 
         previewView = findViewById(R.id.svc_previewView);
+
+        Switch sw = (Switch)findViewById(R.id.svc_onoff);
+        imageview = (ImageView)findViewById(R.id.svc_img);
+
+        sw.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                sw_cnt = 1 - sw_cnt;
+
+                if ( sw_cnt == 1 ){
+                    imageview.setImageResource(R.drawable.cam_back);
+                }
+                else{
+                    imageview.setImageResource(NULL);
+                }
+
+            }
+        });
 
         //권한이 있을시 바로 카메라 시작
         if (allPermissionsGranted()) {
@@ -295,6 +321,7 @@ public class ServiceActivity extends AppCompatActivity {
             kakaoNavi();
         }
     }
+
 
     private int updateCnt() {
         int sleepCnt = mDBHelper.SelectCnt();
